@@ -32,22 +32,15 @@ class AuthNotifier extends StateNotifier<AsyncValue<AuthState>> {
 
   Future<void> checkFirstLogin(BuildContext context) async {
     String? firstLogin = await storage.read(key: "firstLogin");
-    if (firstLogin == null) {
-      await storage.write(key: "firstLogin", value: "false");
-    } else if (firstLogin == "false") {
-      Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => WelcomePage()),
-          (Route route) => false);
-    }
+    if (firstLogin == "false") {
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => WelcomePage()),
+        (Route route) => false);
+  }
   }
 
   Future<bool> loadUserIfRemembered(BuildContext context) async {
     String? remember = await storage.read(key: "remember");
-
-    if (remember == null) {
-      checkFirstLogin(context);
-      return false;
-    }
 
     if (remember == "guest") {
       state = AsyncValue.data(AuthState.loggedIn);
@@ -62,7 +55,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<AuthState>> {
     String? username = await storage.read(key: "username");
     String? accessToken = await storage.read(key: "token");
 
-    if (username == null || accessToken == null) {
+    if (accessToken == null) {
       return false;
     }
 

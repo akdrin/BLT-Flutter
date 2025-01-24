@@ -1,4 +1,3 @@
-import '../test_imports.dart';
 
 void main() {
   testWidgets("Issue Card Test", (WidgetTester tester) async {

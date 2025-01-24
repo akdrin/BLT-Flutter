@@ -1,4 +1,3 @@
-import '../pages_import.dart';
 
 /// Page stating the legal Terms and Conditions and Privacy
 /// Policy applying to the BLT project.

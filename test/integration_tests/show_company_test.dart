@@ -1,4 +1,3 @@
-import '../test_imports.dart';
 
 void main() {
   testWidgets("Company List Test", (WidgetTester tester) async {

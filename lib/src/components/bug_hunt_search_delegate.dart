@@ -1,4 +1,3 @@
-import './components_import.dart';
 
 /// The search bar of app for searching issues based on keyword.
 class BugHuntSearchDelegate extends SearchDelegate {

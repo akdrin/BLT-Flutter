@@ -1,4 +1,3 @@
-import '../pages_import.dart';
 
 /// The change password page for the app.
 class ChangePasswordPage extends StatefulWidget {
